@@ -1,0 +1,5 @@
+split,regime,threshold,count,MAE,RMSE
+val,normal,1.2698,8418,0.2129,0.3259
+val,spike,1.2698,342,2.1738,2.416
+test,normal,1.2154,8244,0.2461,0.3569
+test,spike,1.2154,516,2.2575,2.5963
