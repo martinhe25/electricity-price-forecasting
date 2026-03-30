@@ -27,6 +27,22 @@ Electricity prices are highly volatile and can change sharply due to demand fluc
   - first differencing
   - seasonal differencing at lag 24
 
+## Methodology
+
+The forecasting pipeline consists of preprocessing, transformation, modeling, and evaluation steps.
+
+### 1. Data Transformation
+
+Electricity prices exhibit strong skewness and extreme spikes. To stabilize variance and improve model performance:
+
+- Apply **asinh transformation**:
+  - \( z = \text{asinh}(price) \)
+- Apply **differencing** to remove trends and seasonality:
+  - First-order differencing (lag 1)
+  - Seasonal differencing (lag 24 for daily cycle)
+
+This produces the working series:
+
 ## Baseline Model
 
 Current baseline:
