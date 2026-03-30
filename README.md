@@ -21,6 +21,7 @@ This project is actively under development as part of a larger effort to build a
 ---
 
 # Electricity Price Forecasting (ERCOT)
+Electricity price forecasting is critical for energy trading, grid operations, and cost optimization. Even small improvements in forecasting accuracy can lead to significant financial impact in real-world systems.
 
 This project studies hourly electricity price forecasting in the ERCOT market, with a particular emphasis on rare but economically significant price spikes.
 
@@ -111,12 +112,11 @@ This distribution highlights the heavy-tailed nature of electricity price moveme
 
 ![Spike Distribution](results/plots/spike_distribution.png)
 
-## Key Takeaways
+### Interpretation
 
-- The ARIMA baseline performs reasonably well in the normal regime.
-- Forecasting error increases sharply during spike periods.
-- Extreme price events remain much harder to predict than ordinary hourly behavior.
-- This motivates adding exogenous inputs such as weather and exploring deep learning models such as LSTM or N-BEATS.
+- ARIMA achieves low error in the normal regime (MAE ≈ 0.21–0.25)
+- However, performance degrades significantly during spike periods (MAE > 2.2)
+- This highlights a key limitation of classical models in capturing extreme events
 
 ## Repository Structure
 
