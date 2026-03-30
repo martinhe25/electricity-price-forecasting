@@ -54,16 +54,8 @@ While classical models perform well under normal conditions, they often fail dur
 
 - **Train:** 2020–2021  
 - **Validation:** 2022  
-- **Test:** 2023  
-
-### Preprocessing
-
-To stabilize the series and enable modeling:
-
-- **Variance stabilization**
-  ```python
-  z = asinh(price)
-
+- **Test:** 2023
+- 
 ## Methodology
 
 The forecasting pipeline consists of preprocessing, transformation, modeling, and evaluation steps.
@@ -73,12 +65,12 @@ The forecasting pipeline consists of preprocessing, transformation, modeling, an
 Electricity prices exhibit strong skewness and extreme spikes. To stabilize variance and improve model performance:
 
 - Apply **asinh transformation**:
-  - \( z = \text{asinh}(price) \)
+  - z = asinh(price)
 - Apply **differencing** to remove trends and seasonality:
   - First-order differencing (lag 1)
   - Seasonal differencing (lag 24 for daily cycle)
 
-This produces the working series:
+This produces the working series: z_diff1&24
 
 ## Baseline Model
 
