@@ -97,20 +97,28 @@ This plot compares the ARIMA baseline forecast against the observed transformed 
 
 ![Prediction vs Actual 2022](results/plots/prediction_vs_actual_2022.png)
 
+This plot shows that the ARIMA model captures overall temporal trends but fails to anticipate sudden price spikes.
+
 ### Prediction vs Actual (Test / 2023)
 This plot compares the ARIMA baseline forecast against the observed transformed price series on the test split.
 
 ![Prediction vs Actual 2023](results/plots/prediction_vs_actual_2023.png)
+
+On the test set, the model generalizes to typical patterns but continues to underperform during extreme volatility events.
 
 ### Residual Analysis
 Residual behavior helps diagnose whether the model is capturing the main temporal structure of the series.
 
 ![Residuals](results/plots/residuals.png)
 
+Residuals remain structured and exhibit large deviations during spikes, indicating that the model does not fully capture underlying dynamics.
+
 ### Spike Distribution
 This distribution highlights the heavy-tailed nature of electricity price movements and the difficulty of forecasting extreme events.
 
 ![Spike Distribution](results/plots/spike_distribution.png)
+
+The heavy-tailed distribution highlights the rarity and magnitude of extreme price movements, making spike prediction inherently challenging.
 
 ### Interpretation
 
