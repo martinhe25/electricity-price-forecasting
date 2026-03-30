@@ -44,6 +44,28 @@ Performance is reported separately for normal-regime observations and spike-regi
 | Test | Normal | 1.2154 | 8244 | 0.2461 | 0.3569 |
 | Test | Spike | 1.2154 | 516 | 2.2575 | 2.5963 |
 
+## Visual Results
+
+### Prediction vs Actual (Validation / 2022)
+This plot compares the ARIMA baseline forecast against the observed transformed price series on the validation split.
+
+![Prediction vs Actual 2022](results/plots/prediction_vs_actual_2022.png)
+
+### Prediction vs Actual (Test / 2023)
+This plot compares the ARIMA baseline forecast against the observed transformed price series on the test split.
+
+![Prediction vs Actual 2023](results/plots/prediction_vs_actual_2023.png)
+
+### Residual Analysis
+Residual behavior helps diagnose whether the model is capturing the main temporal structure of the series.
+
+![Residuals](results/plots/residuals.png)
+
+### Spike Distribution
+This distribution highlights the heavy-tailed nature of electricity price movements and the difficulty of forecasting extreme events.
+
+![Spike Distribution](results/plots/spike_distribution.png)
+
 ## Key Takeaways
 
 - The ARIMA baseline performs reasonably well in the normal regime.
