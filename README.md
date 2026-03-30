@@ -1,3 +1,9 @@
+## Relevance to AEC
+
+Many AEC workflows involve uncertainty, coordination across multiple stakeholders, and incomplete information (e.g., RFIs, cost estimation, scheduling). 
+
+This project explores forecasting under similar constraints, with a focus on handling rare but high-impact events (spikes), which parallels risk management in construction and development workflows.
+
 ## Work in Progress
 
 This project is actively under development as part of a larger effort to build a robust, research-grade electricity price forecasting pipeline, with a focus on extreme price spike prediction.
