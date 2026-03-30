@@ -1,4 +1,4 @@
-## 🚧 Work in Progress
+## Work in Progress
 
 This project is an ongoing effort toward building a robust electricity price forecasting pipeline.
 
