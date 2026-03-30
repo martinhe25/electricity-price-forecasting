@@ -1,3 +1,12 @@
+## 🚧 Work in Progress
+
+This project is an ongoing effort toward building a robust electricity price forecasting pipeline.
+
+Upcoming work includes:
+- Integrating **NOAA weather data** as exogenous inputs
+- Developing **deep learning models (LSTM, N-BEATS)** for nonlinear temporal modeling
+- Designing improved methods for **spike prediction and extreme event modeling**
+
 # Electricity Price Forecasting (ERCOT)
 
 This project studies hourly electricity price forecasting in the ERCOT market using statistical and deep learning methods. The current baseline focuses on ARIMA modeling on transformed Houston Hub real-time price data, with evaluation split between normal periods and extreme price spikes.
