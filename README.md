@@ -49,12 +49,12 @@ Performance is reported separately for normal-regime observations and spike-regi
 ### Prediction vs Actual (Validation / 2022)
 This plot compares the ARIMA baseline forecast against the observed transformed price series on the validation split.
 
-![Prediction vs Actual 2022](results/plots/prediction_vs_actual_2022.png)
+![Prediction vs Actual 2022](results/plots/prediction vs actual_2022.png)
 
 ### Prediction vs Actual (Test / 2023)
 This plot compares the ARIMA baseline forecast against the observed transformed price series on the test split.
 
-![Prediction vs Actual 2023](results/plots/prediction_vs_actual_2023.png)
+![Prediction vs Actual 2023](results/plots/prediction vs actual_2023.png)
 
 ### Residual Analysis
 Residual behavior helps diagnose whether the model is capturing the main temporal structure of the series.
