@@ -1,19 +1,19 @@
 ## Work in Progress
 
-This project is actively under development as part of a larger effort to build a **robust, research-grade electricity price forecasting pipeline**, with a focus on **extreme price spike prediction**.
+This project is actively under development as part of a larger effort to build a robust, research-grade electricity price forecasting pipeline, with a focus on extreme price spike prediction.
 
 ### Upcoming Work
 
-- **Exogenous Features**
+- Exogenous Features
   - Integration of NOAA weather data (temperature, humidity, wind, etc.)
   - Study of weather-driven price dynamics
 
-- **Deep Learning Models**
+- Deep Learning Models
   - LSTM for nonlinear temporal dependencies
   - N-BEATSx for interpretable forecasting with exogenous variables
   - Direct comparison with statistical baselines
 
-- **Extreme Event Modeling**
+- Extreme Event Modeling
   - Quantile-based spike detection
   - Tail-aware objectives (e.g., quantile loss)
   - Improved robustness under rare events
@@ -22,11 +22,11 @@ This project is actively under development as part of a larger effort to build a
 
 # Electricity Price Forecasting (ERCOT)
 
-This project studies **hourly electricity price forecasting in the ERCOT market**, with a particular emphasis on **rare but economically significant price spikes**.
+This project studies hourly electricity price forecasting in the ERCOT market, with a particular emphasis on rare but economically significant price spikes.
 
-The current implementation establishes a **strong ARIMA baseline** and a **rigorous evaluation framework**, which will later be extended to deep learning models.
+The current implementation establishes a strong ARIMA baseline and a rigorous evaluation framework, which will later be extended to deep learning models.
 
-> **Research Question:**  
+> Research Question:  
 > Can modern sequence models improve robustness and spike prediction compared to classical time series methods?
 
 ---
@@ -35,26 +35,26 @@ The current implementation establishes a **strong ARIMA baseline** and a **rigor
 
 Electricity prices are:
 
-- Highly **volatile**
-- Strongly **weather-dependent**
-- Characterized by **heavy-tailed spikes**
+- Highly volatile
+- Strongly weather-dependent
+- Characterized by heavy-tailed spikes
 
-While classical models perform well under normal conditions, they often fail during **extreme price events**, which are the most economically important.
+While classical models perform well under normal conditions, they often fail during extreme price events, which are the most economically important.
 
 ---
 
 ## Dataset
 
-- **Market:** ERCOT (Texas)
-- **Target:** Houston Hub real-time price (LMP)
-- **Time Range:** January 2020 – December 2023
-- **Frequency:** Hourly
+- Market: ERCOT (Texas)
+- Target: Houston Hub real-time price (LMP)
+- Time Range: January 2020 – December 2023
+- Frequency: Hourly
 
 ### Data Split
 
-- **Train:** 2020–2021  
-- **Validation:** 2022  
-- **Test:** 2023
+- Train: 2020–2021  
+- Validation: 2022  
+- Test: 2023
   
 ## Methodology
 
@@ -64,9 +64,9 @@ The forecasting pipeline consists of preprocessing, transformation, modeling, an
 
 Electricity prices exhibit strong skewness and extreme spikes. To stabilize variance and improve model performance:
 
-- Apply **asinh transformation**:
+- Apply asinh transformation:
   - z = asinh(price)
-- Apply **differencing** to remove trends and seasonality:
+- Apply differencing to remove trends and seasonality:
   - First-order differencing (lag 1)
   - Seasonal differencing (lag 24 for daily cycle)
 
@@ -75,8 +75,8 @@ This produces the working series: z_diff1&24
 ## Baseline Model
 
 Current baseline:
-- **Model:** ARIMA(0, 0, 1)
-- **Target:** transformed and differenced series (`z_diff1&24`)
+- Model: ARIMA(0, 0, 1)
+- Target: transformed and differenced series (`z_diff1&24`)
 
 ## Results
 
