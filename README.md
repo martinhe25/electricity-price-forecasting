@@ -1,31 +1,68 @@
 ## Work in Progress
 
-This project is an ongoing effort toward building a robust electricity price forecasting pipeline.
+This project is actively under development as part of a larger effort to build a **robust, research-grade electricity price forecasting pipeline**, with a focus on **extreme price spike prediction**.
 
-Upcoming work includes:
-- Integrating **NOAA weather data** as exogenous inputs
-- Developing **deep learning models (LSTM, N-BEATS)** for nonlinear temporal modeling
-- Designing improved methods for **spike prediction and extreme event modeling**
+### Upcoming Work
+
+- **Exogenous Features**
+  - Integration of NOAA weather data (temperature, humidity, wind, etc.)
+  - Study of weather-driven price dynamics
+
+- **Deep Learning Models**
+  - LSTM for nonlinear temporal dependencies
+  - N-BEATSx for interpretable forecasting with exogenous variables
+  - Direct comparison with statistical baselines
+
+- **Extreme Event Modeling**
+  - Quantile-based spike detection
+  - Tail-aware objectives (e.g., quantile loss)
+  - Improved robustness under rare events
+
+---
 
 # Electricity Price Forecasting (ERCOT)
 
-This project studies hourly electricity price forecasting in the ERCOT market using statistical and deep learning methods. The current baseline focuses on ARIMA modeling on transformed Houston Hub real-time price data, with evaluation split between normal periods and extreme price spikes.
+This project studies **hourly electricity price forecasting in the ERCOT market**, with a particular emphasis on **rare but economically significant price spikes**.
+
+The current implementation establishes a **strong ARIMA baseline** and a **rigorous evaluation framework**, which will later be extended to deep learning models.
+
+> **Research Question:**  
+> Can modern sequence models improve robustness and spike prediction compared to classical time series methods?
+
+---
 
 ## Problem
 
-Electricity prices are highly volatile and can change sharply due to demand fluctuations, weather, and grid constraints. This project explores whether classical time series methods can provide a strong baseline before moving to more advanced deep learning models.
+Electricity prices are:
+
+- Highly **volatile**
+- Strongly **weather-dependent**
+- Characterized by **heavy-tailed spikes**
+
+While classical models perform well under normal conditions, they often fail during **extreme price events**, which are the most economically important.
+
+---
 
 ## Dataset
 
-- **Market:** ERCOT
-- **Target series:** Houston Hub real-time hourly price
-- **Time range:** January 2020 to December 2023
+- **Market:** ERCOT (Texas)
+- **Target:** Houston Hub real-time price (LMP)
+- **Time Range:** January 2020 – December 2023
 - **Frequency:** Hourly
-- **Train / validation / test setup:** historical rolling split with separate validation and test evaluation
-- **Transformations used:**
-  - `asinh(price)`
-  - first differencing
-  - seasonal differencing at lag 24
+
+### Data Split
+
+- **Train:** 2020–2021  
+- **Validation:** 2022  
+- **Test:** 2023  
+
+### Preprocessing
+
+To stabilize the series and enable modeling:
+
+- **Variance stabilization**
+  ```python
+  z = asinh(price)
 
 ## Methodology
 
